@@ -1,0 +1,8 @@
+apiVersion: v2
+name: confluent-kafka-helm
+description: A Helm chart for Confluent Kafka setup with KRaftController, Kafka, KafkaRestClass, KafkaTopic, and Secret management
+version: 1.0.0
+appVersion: 7.7.0
+maintainers:
+  - name: Chandra Abburi
+    email: chandra.abburi@example.com

@@ -1,0 +1,10 @@
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaRestClass
+metadata:
+  name: krc-cfk
+  namespace: {{ .Values.namespace }}
+spec:
+  kafkaClusterRef:
+    name: {{ .Values.kafka.name }}
+  kafkaRest:
+    endpoint: {{ .Values.kafkaRest.endpoint }}

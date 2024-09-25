@@ -1,0 +1,16 @@
+apiVersion: platform.confluent.io/v1beta1
+kind: KafkaRestProxy
+metadata:
+  name: kafkarestproxy
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.kafkaRestProxy.replicas }}
+  authentication:
+    type: {{ .Values.kafkaRestProxy.authentication.type }}
+    basic:
+      secretRef: {{ .Values.secret.basicwithrolerp.name }}
+      roles:
+        - admin
+  image:
+    application: confluentinc/cp-kafka-rest:7.7.0
+    init: confluentinc/confluent-init-container:2.9.0
